@@ -1,5 +1,6 @@
 package encryption;
 
+import java.math.BigInteger;
 import java.util.Random;
 
 public class Runner {
@@ -13,15 +14,15 @@ public class Runner {
 		int cd = (int)c;
 		System.out.println((int)c);
 		System.out.println((char)cd);*/
-		double pow_, max_;
+		int pow_, max_;
 		pow_ = Math.pow(10, 20);
 		max_ = Math.pow(10, 50) - pow_;
 		System.out.println("max : "+max_+" pow:"+pow_+" max:"+Math.pow(10, 50));
 		ElGamal elg = new ElGamal();
 		String msg = "encryption";
 		System.out.println("Original Message : "+msg);
-		int q = pow_+rand.nextDouble(max_);
-		/*int g = 2 + rand.nextInt(q-2);
+		int q = pow_+rand.nextInt(max_);
+		int g = 2 + rand.nextInt(q-2);
 		
 		int key = elg.gen_key(q);
 		int h = elg.power(g, key, q);
@@ -29,7 +30,7 @@ public class Runner {
 		System.out.println("gâ used : "+h);
 		
 		int p = elg.encrypt(msg, q, h, g);
-		System.out.println("Decrypted Message : "+elg.decrypt(p, key, q));*/
+		System.out.println("Decrypted Message : "+elg.decrypt(p, key, q));
 		
 		
 	}
